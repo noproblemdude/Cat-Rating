@@ -32,7 +32,7 @@ jobs:
         - name: upload build artifact
           uses: actions/upload-artifact@main
           with:
-            name: page
+            name: github-pages
             path: dist
             if-no-files-found: error
 
@@ -52,7 +52,7 @@ jobs:
       - name: download the build artifacts
         uses: actions/download-artifact@main
         with:
-          name: page
+          name: github-pages
           path: .
       - name: deploy to github pages
         uses: actions/deploy-pages@v2
