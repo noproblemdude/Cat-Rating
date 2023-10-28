@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "Development": "webpack serve --config ./webpack.dev.js",
-    "test": "jest --watchAll --verbose --coverage",
+    "test": "jest --verbose --coverage",
     "Production build": "webpack --config ./webpack.prod.js",
     "lint": "eslint . --ext .ts"
   },
