@@ -25,6 +25,10 @@ jobs:
         - name: Build the Project
           run: npm run "Production build"
        # upload build artifact -> use actions/upload-pages-artifact@v2
+        - name: list everything
+          run: |
+              echo test the checkout action,
+              ls -a 
         - name: upload build artifact
           uses: actions/upload-pages-artifact@v2
 
