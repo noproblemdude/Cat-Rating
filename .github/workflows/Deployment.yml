@@ -25,10 +25,7 @@ jobs:
         - name: Build the Project
           run: npm run "Production build"
        # upload build artifact -> use actions/upload-pages-artifact@v2
-        - uses: actions/upload-artifact@v3
-          with:
-            name: Build
-            path: dist
+        - uses: actions/upload-pages-artifact@v2
 
    deploy:
     permissions:
@@ -47,9 +44,6 @@ jobs:
         uses: actions/configure-pages@v3
       - name: download the build artifacts
         uses: actions/download-artifact@v3
-        with:
-          name: Build
-          path: dist
       - name: deploy to github pages
         uses: actions/deploy-pages@v2
         
