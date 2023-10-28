@@ -22,3 +22,6 @@ jobs:
 
          - name: Run tests
            run: npm run test --if-present
+          
+         - name: Run ESLinter
+           run: npm run Lint --if-present
