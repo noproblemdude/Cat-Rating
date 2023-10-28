@@ -1,1 +1,4 @@
-Dynamic limiting of rating
+Write real unit tests
+Set Dev and Deployment workflow
+responsive page content
+Lighthouse analysis
