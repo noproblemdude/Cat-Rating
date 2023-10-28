@@ -1,8 +1,8 @@
-var icon = document.querySelector(".fas")
-var loginButton = <HTMLButtonElement>document.getElementById("loginButton");
-var password = <HTMLInputElement>document.getElementById("password");
-var username = <HTMLInputElement>document.getElementById("username");
-var errorMessage = <HTMLParagraphElement>document.getElementById("errorMessage");
+const icon = document.querySelector(".fas")
+const loginButton = <HTMLButtonElement>document.getElementById("loginButton");
+const password = <HTMLInputElement>document.getElementById("password");
+const username = <HTMLInputElement>document.getElementById("username");
+const errorMessage = <HTMLParagraphElement>document.getElementById("errorMessage");
 
 icon.addEventListener('click',show)
 loginButton.addEventListener('click',login)
@@ -18,7 +18,7 @@ function show(){
       password.type = "password";
     }
 
-  };
+  }
 
 
 function login(){

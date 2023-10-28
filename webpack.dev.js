@@ -1,10 +1,12 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin'); 
-const pages = ["index","Home"];
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
+
+const pages = ['index', 'Home'];
 
 module.exports = {
-    mode: 'development',
+  mode: 'development',
   // 1
   // Use the src/index.js file as entry point to bundle it.
   // If the src/index.js file imports other JS files,
@@ -18,7 +20,7 @@ module.exports = {
   // in the /dist folder
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: "[name].js",
+    filename: '[name].js',
   },
   // 3
   // The /dist folder will be used to serve our application
@@ -43,22 +45,22 @@ module.exports = {
 
   optimization: {
     splitChunks: {
-      chunks: "all",
+      chunks: 'all',
     },
   },
 
   plugins: [].concat(
     pages.map(
-      (page) =>
-        new HtmlWebpackPlugin({
-          inject: true,
-          template: `./src/pages/${page}.html`,
-          filename: `${page}.html`,
-          chunks: [page],
-        })
-    ),  
-  [
-    new CleanWebpackPlugin,
-  ]
-  )
+      (page) => new HtmlWebpackPlugin({
+        inject: true,
+        template: `./src/pages/${page}.html`,
+        filename: `${page}.html`,
+        chunks: [page],
+      }),
+    ),
+    [
+      new CleanWebpackPlugin(),
+      new ESLintPlugin(),
+    ],
+  ),
 };

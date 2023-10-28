@@ -1,10 +1,10 @@
-var rateButton = <HTMLButtonElement>document.getElementById("ratebutton");
-var generateButton = <HTMLButtonElement>document.getElementById("generatebutton");
-var nickName = <HTMLInputElement>document.getElementById("Nickname");
-var rating = <HTMLInputElement>document.getElementById("Rating");
-var email = <HTMLInputElement>document.getElementById("Email");
-var message = <HTMLInputElement>document.getElementById("message");
-let picDiv = <HTMLDivElement>document.getElementById("catpic");
+const rateButton = <HTMLButtonElement>document.getElementById("ratebutton");
+const generateButton = <HTMLButtonElement>document.getElementById("generatebutton");
+const nickName = <HTMLInputElement>document.getElementById("Nickname");
+const rating = <HTMLInputElement>document.getElementById("Rating");
+const email = <HTMLInputElement>document.getElementById("Email");
+const message = <HTMLInputElement>document.getElementById("message");
+const picDiv = <HTMLDivElement>document.getElementById("catpic");
 
 rateButton.addEventListener('click',rate);
 generateButton.addEventListener('click',generatePic);
@@ -39,13 +39,13 @@ function rate(){
 }
 
 async function generatePic(){
-    let catImg= document.getElementById("catimg");
+    const catImg= document.getElementById("catimg");
     if(catImg!=null){
         catImg.remove();
     }
 
-    let imgElement = document.createElement("img");
-    let pictureResponse = await (await fetch("https://api.thecatapi.com/v1/images/search?api_key=live_fY5kaLZT5mD5lSpviYYpTxXf4YyilhFVLnT9j75Rst466CsvWWmxUsUEfcuCtcDm")).json();
+    const imgElement = document.createElement("img");
+    const pictureResponse = await (await fetch("https://api.thecatapi.com/v1/images/search?api_key=live_fY5kaLZT5mD5lSpviYYpTxXf4YyilhFVLnT9j75Rst466CsvWWmxUsUEfcuCtcDm")).json();
 
     imgElement.id = "catimg"
     imgElement.src = pictureResponse[0].url;
