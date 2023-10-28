@@ -3,8 +3,8 @@ on:
       branches: [main]
 
 jobs:
-   #test:
-   #  uses: ./.github/workflows/Development.yml
+   test:
+     uses: ./.github/workflows/Development.yml
    
    build:
      name: Build Application
