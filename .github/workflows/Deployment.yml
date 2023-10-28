@@ -27,6 +27,7 @@ jobs:
        # upload build artifact -> use actions/upload-pages-artifact@v2
         - name: upload build artifact
           uses: actions/upload-pages-artifact@v2
+            path: dist
 
 #        - name: upload build artifact
 #          uses: actions/upload-artifact@main
