@@ -1,4 +1,6 @@
 Write real unit tests
 Set Dev and Deployment workflow
+    -Dev Workflow:
+        -test run in workflow is done
 responsive page content
 Lighthouse analysis
