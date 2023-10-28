@@ -1,6 +1,6 @@
 on: 
    push:
-      branches: [Main]
+      branches: [main]
 
 jobs:
    test:
