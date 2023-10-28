@@ -25,16 +25,14 @@ jobs:
         - name: Build the Project
           run: npm run "Production build"
        # upload build artifact -> use actions/upload-pages-artifact@v2
-        - name: list everything
-          run: |
-              echo test the checkout action,
-              ls -a 
-        - name: upload build artifact
-          uses: actions/upload-artifact@main
-          with:
-            name: github-pages
-            path: dist
-            if-no-files-found: error
+        -name: upload build artifact
+         uses: actions/upload-pages-artifact@v2
+#        - name: upload build artifact
+#          uses: actions/upload-artifact@main
+#          with:
+#            name: github-pages
+#            path: dist
+#            if-no-files-found: error
 
    deploy:
     permissions: write-all
@@ -49,7 +47,7 @@ jobs:
       - name: setup github pages
         uses: actions/configure-pages@v3
       - name: download the build artifacts
-        uses: actions/download-artifact@main
+        uses: actions/download-artifact@v3
         with:
           name: github-pages
           path: .
