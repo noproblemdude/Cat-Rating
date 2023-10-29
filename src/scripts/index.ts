@@ -10,7 +10,6 @@ icon.addEventListener('click',show)
 loginButton.addEventListener('click',login)
 
 let ratingsList = new RatingsList();
-ratingsList.addTolist(new Rating(0,"das",3,"dasfvd"))
 console.log(ratingsList.ratings[0].getid())
 sessionStorage.setItem("ratingsList",JSON.stringify(ratingsList));
 

@@ -16,10 +16,8 @@ seeRatingsButton.addEventListener('click',seeRatings);
 
 const ratingsList = new RatingsList();
 Object.assign(ratingsList,JSON.parse(sessionStorage.getItem("ratingsList")))
-console.log(ratingsList)
 ratingsList.copyRatings(ratingsList.ratings)
-console.log(ratingsList)
-console.log(ratingsList.ratings[0].getid())
+
 
 sessionStorage.clear();
 
