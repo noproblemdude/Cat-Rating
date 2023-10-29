@@ -1,5 +1,8 @@
+import { Rating, RatingsList } from "./rating";
+
 const rateButton = <HTMLButtonElement>document.getElementById("ratebutton");
 const generateButton = <HTMLButtonElement>document.getElementById("generatebutton");
+const seeRatingsButton = <HTMLButtonElement>document.getElementById("seeRatingButton");
 const nickName = <HTMLInputElement>document.getElementById("Nickname");
 const rating = <HTMLInputElement>document.getElementById("Rating");
 const email = <HTMLInputElement>document.getElementById("Email");
@@ -8,8 +11,17 @@ const picDiv = <HTMLDivElement>document.getElementById("catpic");
 
 rateButton.addEventListener('click',rate);
 generateButton.addEventListener('click',generatePic);
+seeRatingsButton.addEventListener('click',seeRatings);
 
 
+const ratingsList = new RatingsList();
+Object.assign(ratingsList,JSON.parse(sessionStorage.getItem("ratingsList")))
+console.log(ratingsList)
+ratingsList.copyRatings(ratingsList.ratings)
+console.log(ratingsList)
+console.log(ratingsList.ratings[0].getid())
+
+sessionStorage.clear();
 
 function rate(){
     let validInput  = true;
@@ -55,7 +67,20 @@ async function generatePic(){
 
 }
 
+function seeRatings(){
+    sessionStorage.setItem("ratingsList",JSON.stringify(ratingsList))
+    window.location.href = 'ratings.html';
+}
+
 function rateNewCat(){
+
+    console.log(ratingsList);
+    
+    let newID = ratingsList.ratings.length;
+    let newRating = new Rating(newID,nickName.value,rating.valueAsNumber,email.value);
+
+    ratingsList.addTolist(newRating);
+
     nickName.value="";
     rating.value="";
     email.value="";
