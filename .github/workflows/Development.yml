@@ -1,9 +1,8 @@
 name: Development Workflow
 
 on:
-   workflow_call:
    push:
-      branches: [development] # is triggered if push event in development branch occurs
+      branches: [Development] # is triggered if push event in development branch occurs
 
 jobs:
    test:
@@ -23,3 +22,6 @@ jobs:
 
          - name: Run tests
            run: npm run test --if-present
+          
+         - name: Run ESLinter
+           run: npm run Lint --if-present

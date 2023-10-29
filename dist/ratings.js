@@ -10,16 +10,6 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/scripts/index.ts":
-/*!******************************!*\
-  !*** ./src/scripts/index.ts ***!
-  \******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _rating__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./rating */ \"./src/scripts/rating.ts\");\n\nvar icon = document.querySelector(\".fas\");\nvar loginButton = document.getElementById(\"loginButton\");\nvar password = document.getElementById(\"password\");\nvar username = document.getElementById(\"username\");\nvar errorMessage = document.getElementById(\"errorMessage\");\nicon.addEventListener('click', show);\nloginButton.addEventListener('click', login);\nvar ratingsList = new _rating__WEBPACK_IMPORTED_MODULE_0__.RatingsList();\nconsole.log(ratingsList.ratings[0].getid());\nsessionStorage.setItem(\"ratingsList\", JSON.stringify(ratingsList));\nfunction show() {\n    // ========== Checking type of password ===========\n    if (password.type === \"password\") {\n        password.type = \"text\";\n    }\n    else {\n        password.type = \"password\";\n    }\n}\nfunction login() {\n    if (username.value != \"\" && password.value != \"\") {\n        window.location.href = 'Home.html';\n    }\n    else {\n        errorMessage.textContent = \"Please enter a Username and Password\";\n    }\n}\n\n\n//# sourceURL=webpack://frontend-app/./src/scripts/index.ts?");
-
-/***/ }),
-
 /***/ "./src/scripts/rating.ts":
 /*!*******************************!*\
   !*** ./src/scripts/rating.ts ***!
@@ -27,6 +17,16 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _rat
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   Rating: () => (/* binding */ Rating),\n/* harmony export */   RatingsList: () => (/* binding */ RatingsList)\n/* harmony export */ });\nvar Rating = /** @class */ (function () {\n    function Rating(id, name, rating, email) {\n        this.id = id;\n        this.name = name;\n        this.rating = rating;\n        this.email = email;\n    }\n    Rating.prototype.getid = function () {\n        return this.id;\n    };\n    Rating.prototype.getName = function () {\n        return this.name;\n    };\n    Rating.prototype.getRating = function () {\n        return this.rating;\n    };\n    Rating.prototype.getEmail = function () {\n        return this.email;\n    };\n    return Rating;\n}());\n\nvar RatingsList = /** @class */ (function () {\n    function RatingsList() {\n        this.ratings = [];\n    }\n    RatingsList.prototype.copyRatings = function (newRatings) {\n        var rats;\n        rats = [];\n        for (var i = 0; i < newRatings.length; i++) {\n            var ratStr = JSON.stringify(newRatings[i]);\n            var newRat = new Rating(0, \"\", 0, \"\");\n            Object.assign(newRat, JSON.parse(ratStr));\n            rats.push(newRat);\n        }\n        this.ratings = rats;\n    };\n    RatingsList.prototype.addTolist = function (rating) {\n        this.ratings.push(rating);\n    };\n    RatingsList.prototype.removeFromList = function (id) {\n        var filteredArray = this.ratings.filter(function (it) { return it.getid() !== id; });\n        this.ratings = filteredArray;\n    };\n    return RatingsList;\n}());\n\n\n\n//# sourceURL=webpack://frontend-app/./src/scripts/rating.ts?");
+
+/***/ }),
+
+/***/ "./src/scripts/ratings.ts":
+/*!********************************!*\
+  !*** ./src/scripts/ratings.ts ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _rating__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./rating */ \"./src/scripts/rating.ts\");\n\nvar ratingsList = new _rating__WEBPACK_IMPORTED_MODULE_0__.RatingsList();\nObject.assign(ratingsList, JSON.parse(sessionStorage.getItem(\"ratingsList\")));\nconsole.log(ratingsList);\nratingsList.copyRatings(ratingsList.ratings);\nconsole.log(ratingsList);\nconsole.log(ratingsList.ratings[0].getid());\nfunction listRatings() {\n    for (var i = 0; i < ratingsList.ratings.length; i++) {\n        var container = document.getElementById(\"ratings\");\n        var divElement = document.createElement(\"div\");\n        var nameElement = document.createElement(\"p\");\n        nameElement.textContent = ratingsList.ratings[i].getName();\n        var scoreElement = document.createElement(\"p\");\n        scoreElement.textContent = ratingsList.ratings[i].getRating().toString();\n        var emailElement = document.createElement(\"p\");\n        emailElement.textContent = ratingsList.ratings[i].getEmail();\n        divElement.appendChild(nameElement);\n        divElement.appendChild(scoreElement);\n        divElement.appendChild(emailElement);\n        container.appendChild(divElement);\n    }\n}\nlistRatings();\n\n\n//# sourceURL=webpack://frontend-app/./src/scripts/ratings.ts?");
 
 /***/ })
 
@@ -90,7 +90,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/scripts/index.ts");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/scripts/ratings.ts");
 /******/ 	
 /******/ })()
 ;
