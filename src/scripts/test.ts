@@ -6,6 +6,5 @@ describe('My Cart tests', () => {
     const cart = new Cart();
     cart.addToCart('cheesecake');
     expect(cart.items[0]).toEqual('cheesecake');
-    //expect(true).toEqual(false);
   });
 })
