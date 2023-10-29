@@ -1,8 +1,10 @@
 import { Rating, RatingsList } from "./rating";
+import '../style/Home.css'; 
 
 const rateButton = <HTMLButtonElement>document.getElementById("ratebutton");
 const generateButton = <HTMLButtonElement>document.getElementById("generatebutton");
 const seeRatingsButton = <HTMLButtonElement>document.getElementById("seeRatingButton");
+const signOutButton = <HTMLButtonElement>document.getElementById("signoutbutton");
 const nickName = <HTMLInputElement>document.getElementById("Nickname");
 const rating = <HTMLInputElement>document.getElementById("Rating");
 const email = <HTMLInputElement>document.getElementById("Email");
@@ -12,14 +14,13 @@ const picDiv = <HTMLDivElement>document.getElementById("catpic");
 rateButton.addEventListener('click',rate);
 generateButton.addEventListener('click',generatePic);
 seeRatingsButton.addEventListener('click',seeRatings);
+signOutButton.addEventListener('click',signout);
 
 
 const ratingsList = new RatingsList();
 Object.assign(ratingsList,JSON.parse(sessionStorage.getItem("ratingsList")))
 ratingsList.copyRatings(ratingsList.ratings)
 
-
-sessionStorage.clear();
 
 function rate(){
     let validInput  = true;
@@ -66,8 +67,13 @@ async function generatePic(){
 }
 
 function seeRatings(){
+    sessionStorage.clear();
     sessionStorage.setItem("ratingsList",JSON.stringify(ratingsList))
     window.location.href = 'ratings.html';
+}
+
+function signout(){
+    window.location.href = 'index.html';
 }
 
 function rateNewCat(){

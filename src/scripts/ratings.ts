@@ -1,4 +1,11 @@
 import { Rating, RatingsList } from "./rating";
+import '../style/Home.css'; 
+
+const backHomeButton = <HTMLButtonElement>document.getElementById("backHomeButton");
+
+backHomeButton.addEventListener('click',backHome);
+
+
 
 const ratingsList = new RatingsList();
 Object.assign(ratingsList,JSON.parse(sessionStorage.getItem("ratingsList")))
@@ -6,6 +13,7 @@ console.log(ratingsList)
 ratingsList.copyRatings(ratingsList.ratings)
 console.log(ratingsList)
 console.log(ratingsList.ratings[0].getid())
+
 
 
 function listRatings(){
@@ -34,6 +42,9 @@ function listRatings(){
     }
 }
 
+function backHome(){
+    window.location.href = 'Home.html';
+}
 
 listRatings();
 

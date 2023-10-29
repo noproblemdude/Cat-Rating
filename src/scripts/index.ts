@@ -1,4 +1,5 @@
 import { Rating, RatingsList } from "./rating";
+import '../style/Home.css';
 
 const icon = document.querySelector(".fas")
 const loginButton = <HTMLButtonElement>document.getElementById("loginButton");

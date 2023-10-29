@@ -36,11 +36,25 @@ module.exports = {
         use: 'ts-loader',
         exclude: /node_modules/,
       },
+      {
+        test: /\.(js)$/,
+        exclude: /node_modules/, // files to exclude
+        use: ['babel-loader'],
+      },
+      // CSS and SASS
+      {
+        test: /\.(scss|css)$/,  // load files that end with scss and css
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+        ],
+      }
     ],
   },
   resolve: {
     // options for resolving module requests
-    extensions: ['*', '.js', '.ts'], // files to load
+    extensions: ['*', '.js', '.ts','.css'], // files to load
   },
 
   optimization: {
