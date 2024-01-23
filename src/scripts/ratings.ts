@@ -1,5 +1,4 @@
-import { Rating, RatingsList } from "./rating";
-import '../style/Home.css'; 
+import {RatingsList } from "./rating";
 
 const backHomeButton = <HTMLButtonElement>document.getElementById("backHomeButton");
 

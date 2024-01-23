@@ -6,29 +6,15 @@
     <title>HOMEPAGE</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="Home.css">
-    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   </head>
+  
+
   <body>
+    <button type="button" id="loadbutton">Show Markers</button>  
 
-    <div class="center">
-    <h1>CAT RATING :)</h1>
-    <div id="catpic"></div>
-    
-      <form>
-        <input type="text" id="Nickname" placeholder="&#xf007;  Give the cat a name"/>
-        <input type="number" id="Rating" min="0" max="10" placeholder="&#xf023;  Rating from 1 to 10"/>
-        <input type="email" id="Email" placeholder="&#xf023;  Please enter your email"/>
-        <br>
-        <p class="message" id="message"></p>
-        <button type="button" id="ratebutton">rate</button>
-        <button type="button" id="generatebutton">I dont like this cat :/</button>       
-      </form>
+    <div id="map" style="height:500px"></div>
 
-      <button type="button" id="signoutbutton">sign out</button>
-      <button type="button" id="seeRatingButton">See your ratings</button>
-
-    </div>
   </body>
   <script src="Home.ts" type="module"></script>
 </html>
