@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1706026177770" clover="3.2.0">
-  <project timestamp="1706026177770" name="All files">
+<coverage generated="1706098478467" clover="3.2.0">
+  <project timestamp="1706098478467" name="All files">
     <metrics statements="21" coveredstatements="20" conditionals="2" coveredconditionals="2" methods="9" coveredmethods="8" elements="32" coveredelements="30" complexity="0" loc="21" ncloc="21" packages="1" files="1" classes="1"/>
     <file name="parkingSpot.ts" path="/home/leonard/Desktop/FH/Web Engineering/Frontend-App/Cat-Rating/src/scripts/parkingSpot.ts">
       <metrics statements="21" coveredstatements="20" conditionals="2" coveredconditionals="2" methods="9" coveredmethods="8"/>
