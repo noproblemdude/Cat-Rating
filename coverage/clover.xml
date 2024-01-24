@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1698583527034" clover="3.2.0">
-  <project timestamp="1698583527034" name="All files">
-    <metrics statements="16" coveredstatements="12" conditionals="0" coveredconditionals="0" methods="13" coveredmethods="9" elements="29" coveredelements="21" complexity="0" loc="16" ncloc="16" packages="1" files="2" classes="2"/>
-    <file name="cart.ts" path="/home/leonard/Desktop/FH/Web Engineering/Frontend-App/Cat-Rating/src/scripts/cart.ts">
-      <metrics statements="4" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
-      <line num="6" count="1" type="stmt"/>
-      <line num="10" count="1" type="stmt"/>
-      <line num="14" count="0" type="stmt"/>
-      <line num="15" count="0" type="stmt"/>
-    </file>
-    <file name="rating.ts" path="/home/leonard/Desktop/FH/Web Engineering/Frontend-App/Cat-Rating/src/scripts/rating.ts">
-      <metrics statements="12" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="9" coveredmethods="7"/>
-      <line num="8" count="2" type="stmt"/>
-      <line num="9" count="2" type="stmt"/>
-      <line num="10" count="2" type="stmt"/>
-      <line num="11" count="2" type="stmt"/>
-      <line num="15" count="2" type="stmt"/>
-      <line num="19" count="1" type="stmt"/>
-      <line num="23" count="1" type="stmt"/>
-      <line num="27" count="1" type="stmt"/>
-      <line num="38" count="1" type="stmt"/>
+<coverage generated="1706026177770" clover="3.2.0">
+  <project timestamp="1706026177770" name="All files">
+    <metrics statements="21" coveredstatements="20" conditionals="2" coveredconditionals="2" methods="9" coveredmethods="8" elements="32" coveredelements="30" complexity="0" loc="21" ncloc="21" packages="1" files="1" classes="1"/>
+    <file name="parkingSpot.ts" path="/home/leonard/Desktop/FH/Web Engineering/Frontend-App/Cat-Rating/src/scripts/parkingSpot.ts">
+      <metrics statements="21" coveredstatements="20" conditionals="2" coveredconditionals="2" methods="9" coveredmethods="8"/>
+      <line num="10" count="415" type="stmt"/>
+      <line num="11" count="415" type="stmt"/>
+      <line num="12" count="415" type="stmt"/>
+      <line num="13" count="415" type="stmt"/>
+      <line num="18" count="2" type="stmt"/>
+      <line num="22" count="2" type="stmt"/>
+      <line num="26" count="2" type="stmt"/>
+      <line num="30" count="1" type="stmt"/>
       <line num="42" count="1" type="stmt"/>
-      <line num="46" count="0" type="stmt"/>
-      <line num="47" count="0" type="stmt"/>
+      <line num="9972" count="1" type="stmt"/>
+      <line num="9974" count="1" type="stmt"/>
+      <line num="9976" count="1" type="stmt"/>
+      <line num="9977" count="1" type="stmt"/>
+      <line num="9980" count="1" type="stmt"/>
+      <line num="9981" count="413" type="stmt"/>
+      <line num="9982" count="413" type="cond" truecount="2" falsecount="0"/>
+      <line num="9983" count="157" type="stmt"/>
+      <line num="9986" count="413" type="stmt"/>
+      <line num="9996" count="1" type="stmt"/>
+      <line num="10000" count="0" type="stmt"/>
+      <line num="10004" count="4" type="stmt"/>
     </file>
   </project>
 </coverage>

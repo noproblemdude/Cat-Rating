@@ -1,4 +1,3 @@
-import {RatingsList} from "./rating";
 
 const icon = document.querySelector(".fas")
 const loginButton = <HTMLButtonElement>document.getElementById("loginButton");
@@ -8,10 +7,6 @@ const errorMessage = <HTMLParagraphElement>document.getElementById("errorMessage
 
 icon.addEventListener('click',show)
 loginButton.addEventListener('click',login)
-
-const ratingsList = new RatingsList();
-//console.log(ratingsList.ratings[0].getid())
-sessionStorage.setItem("ratingsList",JSON.stringify(ratingsList));
 
 function show(){
     

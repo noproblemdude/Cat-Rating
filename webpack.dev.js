@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 
-const pages = ['index', 'Home', "ratings"];
+const pages = ['index', 'Home', 'parkingSpot'];
 
 module.exports = {
   mode: 'development',
