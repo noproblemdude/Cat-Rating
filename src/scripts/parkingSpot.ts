@@ -1,4 +1,4 @@
-require('../styles/styles.css')
+
 
 import jsonParkingSpots from './SCOOTERABSTELLOGD.json';
 
@@ -114,7 +114,11 @@ function backHome(){
     window.location.href = 'Home.html';
 }
 
+
 try {
+
+    require('../styles/styles.css')
+
     if(<HTMLButtonElement>document.getElementById("backHomeButton") != null){
         const backhomebutton = <HTMLButtonElement>document.getElementById("backHomeButton");
         backhomebutton.addEventListener('click',backHome);
