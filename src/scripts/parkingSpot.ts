@@ -1,15 +1,5 @@
 import jsonParkingSpots from './SCOOTERABSTELLOGD.json';
 
-const backhomebutton = <HTMLButtonElement>document.getElementById("backHomeButton");
-
-if(backhomebutton != null){
-    backhomebutton.addEventListener('click',backHome);
-}
-
-function backHome(){
-    window.location.href = 'Home.html';
-}
-
 
 export class parkingSpot{
     
@@ -110,7 +100,25 @@ function listParkings(){
     }
 }
 
-if(<HTMLDivElement>document.getElementById("parkings") != null){
-    listParkings()
+function backHome(){
+    window.location.href = 'Home.html';
 }
+
+try {
+    if(<HTMLButtonElement>document.getElementById("backHomeButton") != null){
+        const backhomebutton = <HTMLButtonElement>document.getElementById("backHomeButton");
+        backhomebutton.addEventListener('click',backHome);
+    }
+    
+    
+    
+    if(<HTMLDivElement>document.getElementById("parkings") != null){
+        listParkings()
+    }
+    
+} catch (error) {
+    console.log("testing");
+    
+}
+
 
