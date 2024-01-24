@@ -1,3 +1,5 @@
+require('../styles/styles.css')
+
 import jsonParkingSpots from './SCOOTERABSTELLOGD.json';
 
 
@@ -86,15 +88,23 @@ function listParkings(){
         const container = <HTMLDivElement>document.getElementById("parkings");
 
         const divElement = document.createElement("div");
+        divElement.className = "parkingBox";
 
         const addressElement = document.createElement("h1");
         addressElement.textContent= spots.getSpot(i).getAddress();
+        addressElement.className = "text"
 
         const coordinatesElement = document.createElement("p");
         coordinatesElement.textContent= "longitude: " + spots.getSpot(i).getLongitude() +" latitude: " + spots.getSpot(i).getLatitude();
+        coordinatesElement.className = "text"
+        
+        const scootersElement = document.createElement("p");
+        scootersElement.textContent= "Number of scooters in the parking: " + String(spots.getSpot(i).getScooterNumber());
+        scootersElement.className = "text"
 
         divElement.appendChild(addressElement);
         divElement.appendChild(coordinatesElement);
+        divElement.appendChild(scootersElement);
         container.appendChild(divElement);
 
     }

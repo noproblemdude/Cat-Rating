@@ -1,3 +1,4 @@
+require('../styles/styles.css')
 
 const icon = document.querySelector(".fas")
 const loginButton = <HTMLButtonElement>document.getElementById("loginButton");
@@ -10,7 +11,6 @@ loginButton.addEventListener('click',login)
 
 function show(){
     
-    // ========== Checking type of password ===========
     if(password.type === "password"){
       password.type = "text";
     }

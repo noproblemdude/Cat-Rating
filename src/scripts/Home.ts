@@ -1,3 +1,5 @@
+require('../styles/styles.css')
+
 import * as Leaflet from 'leaflet'
 import {parkingSpots } from './parkingSpot';
 import data from './SCOOTERABSTELLOGD.json';
