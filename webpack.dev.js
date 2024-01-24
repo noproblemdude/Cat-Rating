@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable no-undef */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -49,12 +51,13 @@ module.exports = {
           'css-loader',
           'sass-loader',
         ],
-      }
+      },
+      { test: /\.json$/, type: 'json' }
     ],
   },
   resolve: {
     // options for resolving module requests
-    extensions: ['*', '.js', '.ts','.css'], // files to load
+    extensions: ['*', '.js', '.ts','.css','.json'], // files to load
   },
 
   optimization: {
