@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-const pages = ['index', 'Home', "ratings"];
+const pages = ['index', 'Home', 'parkingSpot'];
 
 module.exports = {
   mode: 'development',
