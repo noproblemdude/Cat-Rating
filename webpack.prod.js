@@ -37,6 +37,14 @@ module.exports = {
         use: 'ts-loader',
         exclude: /node_modules/,
       },
+      {
+        test: /\.css$/,  // load files that end with scss and css
+        use: [
+          'style-loader',
+          'css-loader'
+        ],
+      }
+      
     ],
   },
   resolve: {

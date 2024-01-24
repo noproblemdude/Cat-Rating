@@ -43,13 +43,11 @@ module.exports = {
         exclude: /node_modules/, // files to exclude
         use: ['babel-loader'],
       },
-      // CSS and SASS
       {
-        test: /\.(scss|css)$/,  // load files that end with scss and css
+        test: /\.css$/,  // load files that end with scss and css
         use: [
           'style-loader',
-          'css-loader',
-          'sass-loader',
+          'css-loader'
         ],
       },
       { test: /\.json$/, type: 'json' }

@@ -1,4 +1,7 @@
+
+
 import jsonParkingSpots from './SCOOTERABSTELLOGD.json';
+
 
 export class parkingSpot{
     
@@ -59,9 +62,6 @@ export class parkingSpots{
             }
             
     }
-
-    
-
     
     getSpotNumber(){
         return this.totalSpots;
@@ -75,6 +75,64 @@ export class parkingSpots{
         return this.spots[index];
     }
 
+}
+
+
+function listParkings(){
+
+    const spots = new parkingSpots()
+    
+    
+    for(let i=0;i<spots.getSpotNumber();i++){
+
+        const container = <HTMLDivElement>document.getElementById("parkings");
+
+        const divElement = document.createElement("div");
+        divElement.className = "parkingBox";
+
+        const addressElement = document.createElement("h1");
+        addressElement.textContent= spots.getSpot(i).getAddress();
+        addressElement.className = "text"
+
+        const coordinatesElement = document.createElement("p");
+        coordinatesElement.textContent= "longitude: " + spots.getSpot(i).getLongitude() +" latitude: " + spots.getSpot(i).getLatitude();
+        coordinatesElement.className = "text"
+        
+        const scootersElement = document.createElement("p");
+        scootersElement.textContent= "Number of scooters in the parking: " + String(spots.getSpot(i).getScooterNumber());
+        scootersElement.className = "text"
+
+        divElement.appendChild(addressElement);
+        divElement.appendChild(coordinatesElement);
+        divElement.appendChild(scootersElement);
+        container.appendChild(divElement);
+
+    }
+}
+
+function backHome(){
+    window.location.href = 'Home.html';
+}
+
+
+try {
+
+    require('../styles/styles.css')
+
+    if(<HTMLButtonElement>document.getElementById("backHomeButton") != null){
+        const backhomebutton = <HTMLButtonElement>document.getElementById("backHomeButton");
+        backhomebutton.addEventListener('click',backHome);
+    }
+    
+    
+    
+    if(<HTMLDivElement>document.getElementById("parkings") != null){
+        listParkings()
+    }
+    
+} catch (error) {
+    console.log("testing");
+    
 }
 
 
