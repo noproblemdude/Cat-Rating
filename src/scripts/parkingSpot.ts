@@ -1,5 +1,16 @@
 import jsonParkingSpots from './SCOOTERABSTELLOGD.json';
 
+const backhomebutton = <HTMLButtonElement>document.getElementById("backHomeButton");
+
+if(backhomebutton != null){
+    backhomebutton.addEventListener('click',backHome);
+}
+
+function backHome(){
+    window.location.href = 'Home.html';
+}
+
+
 export class parkingSpot{
     
     private longitude: number;
@@ -59,9 +70,6 @@ export class parkingSpots{
             }
             
     }
-
-    
-
     
     getSpotNumber(){
         return this.totalSpots;
@@ -77,4 +85,32 @@ export class parkingSpots{
 
 }
 
+
+function listParkings(){
+
+    const spots = new parkingSpots()
+    
+    
+    for(let i=0;i<spots.getSpotNumber();i++){
+
+        const container = <HTMLDivElement>document.getElementById("parkings");
+
+        const divElement = document.createElement("div");
+
+        const addressElement = document.createElement("h1");
+        addressElement.textContent= spots.getSpot(i).getAddress();
+
+        const coordinatesElement = document.createElement("p");
+        coordinatesElement.textContent= "longitude: " + spots.getSpot(i).getLongitude() +" latitude: " + spots.getSpot(i).getLatitude();
+
+        divElement.appendChild(addressElement);
+        divElement.appendChild(coordinatesElement);
+        container.appendChild(divElement);
+
+    }
+}
+
+if(<HTMLDivElement>document.getElementById("parkings") != null){
+    listParkings()
+}
 
