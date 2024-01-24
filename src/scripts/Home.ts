@@ -5,7 +5,7 @@ const leafMap = <HTMLButtonElement>document.getElementById("map");
 const loadButton = <HTMLButtonElement>document.getElementById("loadbutton");
 
 
-loadButton.addEventListener('click',fetchParkingSpots);
+loadButton.addEventListener('click',setMarkers);
 
 function setMarkers(){
 
@@ -20,9 +20,11 @@ function setMarkers(){
 
 }
 
+
+/*
 async function fetchParkingSpots(){
 
-    //const url = 'https://corsproxy.io/?' + encodeURIComponent('https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&version=1.1.0&typeName=ogdwien:SCOOTERABSTELLOGD&srsName=EPSG:4326&outputFormat=json');
+    const url = 'https://corsproxy.io/?' + encodeURIComponent('https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&version=1.1.0&typeName=ogdwien:SCOOTERABSTELLOGD&srsName=EPSG:4326&outputFormat=json');
 
     const url = 'https://data.wien.gv.at/daten/geo?service=WFS&request=GetFeature&version=1.1.0&typeName=ogdwien:SCOOTERABSTELLOGD&srsName=EPSG:4326&outputFormat=json';
     const parkingsResponse = await fetch(url/*, {
@@ -32,11 +34,11 @@ async function fetchParkingSpots(){
         'Host':'data.wien.gv.at',
         'Origin':'213.47.84.184'
       },
-    }*/);
+    });
       
     console.log(parkingsResponse)
 }
-
+*/
 
 const map = Leaflet.map(leafMap).setView([48.2082, 16.3719], 13);
 
